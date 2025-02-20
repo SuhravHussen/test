@@ -1,21 +1,134 @@
+@import url("../css/animation.css");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --secondary: #1f0f2d;
+  --primary: #75dab4;
+  --background: #120a1f;
+  --foreground: #e4e4e4;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* :root {
+
+  } */
 }
 
 body {
+  font-family: Saira, Helvetica, sans-serif;
+  background-color: var(--background);
   color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+.text-stroke {
+  color: #e4e4e4;
+  -webkit-text-stroke: 1px #e4e4e4;
+  -webkit-text-fill-color: transparent;
+}
+
+.circular-border {
+  position: relative;
+}
+.circular-border::before {
+  content: "";
+  height: 30px;
+  left: -10px;
+  position: absolute;
+  top: -3px;
+  transition: all 0.2s cubic-bezier(0.98, 0.57, 1, 1) 0s;
+  width: 30px;
+  border-radius: 50%;
+  border: 1.5px solid var(--primary);
+}
+
+.border-corner:before {
+  background-color: #75dab4;
+  border-radius: 23px;
+  bottom: 1.5px;
+  content: "";
+  -webkit-filter: blur(1px);
+  filter: blur(1px);
+  left: -0.5px;
+  position: absolute;
+  right: -1.5px;
+  top: 1.5px;
+  -webkit-transform: skew(0.5deg, 0.5deg);
+  transform: skew(0.5deg, 0.5deg);
+  z-index: -1;
+}
+
+.card-hover:hover {
+  -webkit-backdrop-filter: blur(42px);
+  backdrop-filter: blur(42px);
+  background: linear-gradient(
+    152.97deg,
+    hsla(0, 0%, 100%, 0.2),
+    hsla(0, 0%, 100%, 0)
+  );
+  border-radius: 10px;
+}
+
+.embla {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.embla__container {
+  display: flex;
+  /* margin-right: -1rem; */
+}
+
+.embla__slide {
+  flex: 0 0 calc(20% - 0.8rem);
+  min-width: 0;
+  margin-right: 1rem;
+}
+
+@media (max-width: 800px) {
+  .embla__slide {
+    flex: 0 0 calc(33.33% - 0.67rem);
+  }
+}
+
+@media (max-width: 600px) {
+  .embla__slide {
+    flex: 0 0 calc(50% - 0.5rem);
+  }
+}
+
+.footer-link {
+  position: relative;
+  transition: all 0.5s ease-out 0s;
+  font-weight: 500;
+}
+
+.footer-link:hover {
+  color: var(--primary);
+  padding-left: 15px;
+}
+
+.footer-link:before {
+  background-color: var(--primary);
+  border-radius: 50%;
+  content: "";
+  height: 10px;
+  left: -20px;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  transition: all 0.5s ease-out 0s;
+  visibility: hidden;
+  width: 10px;
+}
+
+.footer-link:hover:before {
+  opacity: 1;
+  visibility: visible;
+  left: 0;
 }
