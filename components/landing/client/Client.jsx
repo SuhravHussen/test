@@ -13,10 +13,6 @@ export default function ClientCarousel() {
   });
 
   useEffect(() => {
-    if (emblaApi) {
-      emblaApi.plugins()?.autoplay?.play();
-    }
-
     const autoplay = setInterval(() => {
       emblaApi.scrollNext();
     }, 3000);

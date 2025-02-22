@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/accordion";
 import { Separator } from "../ui/separator";
 import Link from "next/link";
+import Image from "next/image";
 const SlideMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -28,10 +29,16 @@ const SlideMenu = () => {
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        <div className="flex items-center justify-between p-4 border-b border-[--primary]">
-          <p className="text-2xl font-bold text-[--primary]">Intellizlab</p>
+        <div className="flex items-center justify-between py-4 border-b border-[--primary]">
+          <Image
+            src="/logo.png"
+            alt="Vercel Logo"
+            width={140}
+            height={75}
+            // className="bg-red-400"
+          />
           <button
-            className="p-2 rounded-full bg-[--primary] text-white"
+            className="p-2 rounded-full bg-[--primary] text-white mr-4"
             onClick={toggleMenu}
           >
             <X size={20} strokeWidth={4} />

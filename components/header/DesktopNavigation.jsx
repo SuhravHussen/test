@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function DesktopNavigation() {
   return (
-    <div className="hidden xl:flex gap-10 w-[70%] justify-center text-[#e4e4e4] font-semibold relative">
+    <div className="hidden xl:flex gap-10 w-[60%] justify-center text-[#e4e4e4] font-semibold relative">
       <div className="flex items-center group relative cursor-pointer h-[75px]">
         Home
         <ChevronDown size={20} />

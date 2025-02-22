@@ -1,11 +1,19 @@
 import React from "react";
 import Link from "next/link";
 import { Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
+import Image from "next/image";
 
 export default function Social() {
   return (
     <div className="w-full lg:w-1/4 flex flex-col gap-6">
-      <h1 className="text-2xl font-bold text-white">INTELLIZLAB</h1>
+      <Image
+        src="/logo.png"
+        alt="logo"
+        width={200}
+        height={100}
+        className="-ml-6"
+      />
+
       <p>
         Integer purus odio, placerat nec ande rhoncus in, ullamcorper nec dolor.
         on aptent taciti sociosqu.
